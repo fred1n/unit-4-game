@@ -1,0 +1,67 @@
+/* Backgrounds color */
+
+body {
+    background-image: url("../images/background.png");
+}
+
+/* Jumbo Tron colors */
+
+.jumbotron {
+    background-color: #f0e8e8;
+}
+
+/*  Main Game/Score Section */
+
+#gameControl, #scoreSection {
+    background-color: #f0e8e8;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*  # and total points background */
+
+#numberSection, #totalPoints {
+    background-color: rgb(224, 211, 187);
+}
+
+/*  button formatting  */
+
+#buttonSection {
+    padding: 0px;
+    padding-top: 50px;
+    padding-bottom: 25px;
+}
+
+/* Header fonts */
+
+h1, h2, h3 {
+    font-family: 'Alfa Slab One', cursive;
+}
+
+/* Div/P element fonts */
+
+p {
+    font-family: 'Ek Mukta', sans-serif;
+}
+
+/* # area */
+
+.numberBox {
+    font-size: 100px;
+    margin: 0px;
+}
+
+/* images for buttons */
+
+.icons {
+    display: inline-block;
+    max-width: 100px;
+    max-height: 100px;
+    width: auto;
+    height: auto;
+    margin: 5px;
+}
+
+img {
+    height: 100, 100;
+}
