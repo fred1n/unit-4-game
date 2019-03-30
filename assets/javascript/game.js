@@ -1,6 +1,5 @@
 $(document).ready(function() {
-	// Arrays
-	// random computer variable array
+	// array to hold random computer variable
 	var rand = [];
 	// For loop to store random #'s starting at 17
 	for (var i = 17; i < 121; i++) {
@@ -16,8 +15,7 @@ $(document).ready(function() {
 		console.log('marvels.push(c) ' + marvels.push(c));
 	}
 
-	// Global Variables
-
+	// Variables
 	// random variables selected by computer
 	var randNumber; // number to match
 	var marvelNumbers = []; // for array of random marvel values
@@ -29,8 +27,8 @@ $(document).ready(function() {
 
 	var totalScore = 0; // user's score
 
-	var wins = 0; // tracks wins
-	var losses = 0; // tracks losses
+	var winsCount = 0; // tracks wins
+	var lossCount = 0; // tracks lossCount
 
 	// Function
 	// passes an argument to generate a random # using the Math.Floor method
@@ -95,41 +93,48 @@ $(document).ready(function() {
 
 	// marvel button functions
 	$('#button-1').on('click', function() {
+		//keep track of score
 		totalScore += c1;
 		$('#totalNumber').html(totalScore);
 	});
 
 	$('#button-2').on('click', function() {
+		//keep track of score
 		totalScore += c2;
 		$('#totalNumber').html(totalScore);
 	});
 
 	$('#button-3').on('click', function() {
+		//keep track of score
 		totalScore += c3;
 		$('#totalNumber').html(totalScore);
 	});
 
 	$('#button-4').on('click', function() {
+		//keep track of score
 		totalScore += c4;
 		$('#totalNumber').html(totalScore);
 	});
 	// using the onclick event based on the button selected
 	$('button').on('click', function() {
-		// winner
+		// if totalscore equals the random #, winner
 		if (totalScore == randNumber) {
-			wins++;
+			// increment win counter
+			winsCount++;
 			console.log(totalScore);
+			// display on page total number and # of wins
 			$('#totalNumber').html(totalScore);
-			$('#wins').html('Wins: ' + wins);
-			//
+			$('#wins').html('Wins: ' + winsCount);
+			// timer for winner
 			setTimeout(function() {
 				gameReset('WINNER!!');
 			}, 200);
 		} else if (totalScore > randNumber) {
-			losses++;
-			$('#totalNumber').html(totalScore);
-			$('#losses').html('Losses: ' + losses);
-
+			// else if score is greater then #
+			lossCount++; // increment loss counter
+			$('#totalNumber').html(totalScore); // display on page
+			$('#losses').html('Losses: ' + lossCount);
+			// set time for loss
 			setTimeout(function() {
 				gameReset('YOU LOSE...Better next time!!');
 			}, 200);
